@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/colors.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/typography.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/shape.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/motion.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/base.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/interactions.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/styles.css">
+<script src="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.js"></script>
+<style>body{margin:0;background:#fff}a{color:#0f72af}a:hover{color:#1e88c9}</style>
+</helmet>
+<div style="font-family:'Noto Sans JP',sans-serif;letter-spacing:0.04em">
+<x-import component-from-global-scope="DesignSystem_d5d132.UtilityBar" on-navigate="{{ nav }}" hint-size="100%,36px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.SiteHeader" items="{{ navItems }}" active="水中ポンプレンタル" cta-label="お問い合わせ" on-navigate="{{ nav }}" hint-size="100%,124px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.Breadcrumb" items="{{ crumbs }}" hint-size="100%,44px"></x-import>
+<section data-screen-label="機材概要" style="padding:64px 0 96px">
+<div style="max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:6fr 6fr;gap:64px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="border:1px solid #dde5eb;border-radius:16px;background:#ffffff;padding:32px"><img src="assets/photos/pump-f-1660a.png" alt="大水量水中ポンプ F-1660A" style="width:100%;aspect-ratio:1/1;object-fit:contain;display:block"></div>
+<p style="margin:0;font-size:12px;color:#6b7a86">※ 使用時・接続部の写真は撮影またはご支給をお願いします。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:8px">
+<span style="display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:0.05em;color:#0f72af"><span style="width:28px;height:4px;border-radius:2px;background:#0f72af"></span>大水量ポンプ</span>
+<h1 style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:36px;font-weight:700;line-height:1.32;margin:0;color:#14212c">大水量水中ポンプ 150mm</h1>
+<span style="font-family:'Roboto Mono',monospace;font-size:15px;color:#6b7a86">F-1660A</span>
+</div>
+<p style="margin:0;font-size:15px;line-height:1.9;color:#26343f;max-width:560px">河川改修や護岸工事など、大量の水替えが必要な現場向けの機種です。台数を組み合わせて、必要な排水量に合わせた構成をご提案します。</p>
+<x-import component-from-global-scope="DesignSystem_d5d132.SpecTable" rows="{{ specRows }}" caption="主要仕様（仮の値を含みます）" hint-size="100%,320px"></x-import>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="primary" size="lg" on-click="{{ toContact }}" hint-size="260px,52px">この機材について相談する</x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="outline-ink" size="lg" on-click="{{ toProducts }}" hint-size="180px,52px">機材一覧へ戻る</x-import>
+</div>
+<span style="font-size:13px;color:#6b7a86">レンタル料金は工期・台数・配管によりお見積もりでご提示します。</span>
+</div>
+</div>
+</div>
+</section>
+<section data-screen-label="主な用途と注意" style="background:#f5f8fa;padding:96px 0">
+<div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:6fr 6fr;gap:64px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:20px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="USE CASES" title="主な用途" hint-size="100%,100px"></x-import>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:center;gap:12px;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;padding:16px 20px"><span style="color:#0f72af"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="droplets" size="18" hint-size="18px,18px"></x-import></span><span style="font-size:14px;color:#26343f">河川改修・護岸工事の仮排水</span></div>
+<div style="display:flex;align-items:center;gap:12px;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;padding:16px 20px"><span style="color:#0f72af"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="droplets" size="18" hint-size="18px,18px"></x-import></span><span style="font-size:14px;color:#26343f">大水量の水替え・締切排水</span></div>
+<div style="display:flex;align-items:center;gap:12px;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;padding:16px 20px"><span style="color:#0f72af"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="droplets" size="18" hint-size="18px,18px"></x-import></span><span style="font-size:14px;color:#26343f">雨水・湧水の排水</span></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="NOTES" title="使用時の注意" hint-size="100%,100px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.Notice" tone="warn" title="ご確認ください" hint-size="100%,140px">運転には所定の電源容量が必要です。電源のない現場では発電機をあわせて手配します。土砂を多く含む水にはサンド用機種をご提案する場合があります。※ 注意事項の原稿はご支給資料をもとに確定します。</x-import>
+</div>
+</div>
+</section>
+<section data-screen-label="あわせて必要な機材" style="padding:96px 0">
+<div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="WORKS WITH" title="あわせて必要になる機材" lead="この機種とあわせて、現場に応じて次の機材を一式で手配します。" hint-size="100%,150px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px">
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="zap" title="発電機" body="ポンプの容量に合わせた発電機を手配します。" hint-size="100%,200px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="cable" title="ホース" body="口径・長さを排水距離に合わせてご用意します。" hint-size="100%,200px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="layers" title="送水管" body="長距離の送水が必要な現場でご相談いただけます。" hint-size="100%,200px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="package" title="ケーブル・その他" body="電源までの距離に応じたケーブル等をご案内します。" hint-size="100%,200px"></x-import>
+</div>
+<div style="display:flex;justify-content:center;margin-top:40px">
+<x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="outline-ink" size="md" on-click="{{ toRelated }}" hint-size="180px,44px">関連機材を見る</x-import>
+</div>
+</div>
+</section>
+<section data-screen-label="関連機種" style="background:#f5f8fa;padding:96px 0">
+<div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="RELATED MODELS" title="関連する機種" hint-size="100%,100px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px">
+<x-import component-from-global-scope="DesignSystem_d5d132.ProductCard" name="サンド用水中ポンプ 100mm" model="KRS-1022-51" image="assets/photos/pump-krs-1022-51.png" specs="{{ specsB }}" quote-note="レンタル料金はお見積もりでご提示します。" cta-label="この機材について相談する" on-select="{{ toContact }}" hint-size="100%,480px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.ProductCard" name="汚水・排水用水中ポンプ 150mm" model="U-65014" image="assets/photos/pump-u-65014.png" specs="{{ specsC }}" quote-note="レンタル料金はお見積もりでご提示します。" cta-label="この機材について相談する" on-select="{{ toContact }}" hint-size="100%,480px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.ProductCard" name="大水量水中ポンプ 200mm" model="F-2080A（仮）" image-label="機材写真（ご支給待ち）" specs="{{ specsD }}" quote-note="レンタル料金はお見積もりでご提示します。" cta-label="この機材について相談する" on-select="{{ toContact }}" hint-size="100%,480px"></x-import>
+</div>
+</div>
+</section>
+<x-import component-from-global-scope="DesignSystem_d5d132.CtaBand" title="この機材について、ご相談ください。" lead="台数・工期・配管条件をお聞きして、一式のお見積もりをご提示します。機材が決まっていなくても、ご相談いただけます。" primary-label="この機材について相談する" secondary-label="機材一覧へ戻る" on-primary="{{ toContact }}" on-secondary="{{ toProducts }}" hours="受付時間はご確認のうえ掲載します（仮）" mark-src="assets/logo-mark.png" hint-size="100%,300px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.SiteFooter" asset-base="assets" on-navigate="{{ nav }}" hint-size="100%,420px"></x-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  nav(k){
+    var P={home:'index',products:'products',detail:'product-detail',related:'related-equipment',support:'support-page',cases:'case-studies',caseDetail:'case-detail',flow:'flow',faq:'faq',company:'company',contact:'contact',done:'thanks'};
+    if(P[k])window.location.href=P[k]+'.html';
+  }
+  renderVals(){
+    var nav=this.nav.bind(this);
+    return {
+      nav:nav,
+      navItems:[{label:'水中ポンプレンタル',key:'products'},{label:'関連機材',key:'related'},{label:'サポート内容',key:'support'},{label:'対応事例',key:'cases'},{label:'ご相談の流れ',key:'flow'},{label:'よくあるご質問',key:'faq'},{label:'会社案内',key:'company'}],
+      crumbs:[{label:'トップ',href:'index.html'},{label:'水中ポンプレンタル',href:'products.html'},{label:'大水量水中ポンプ 150mm'}],
+      specRows:[
+        {label:'口径',value:'150 mm'},
+        {label:'吐出量',value:'2.4 m³/min'},
+        {label:'全揚程',value:'22 m'},
+        {label:'電源',value:'三相 200 V（仮）'},
+        {label:'質量',value:'ご支給資料により確定'},
+        {label:'水質',value:'清水・雨水・湧水',mono:false}
+      ],
+      specsB:[{label:'口径',value:'100 mm'},{label:'吐出量',value:'0.9 m³/min'},{label:'全揚程',value:'15 m'}],
+      specsC:[{label:'口径',value:'150 mm'},{label:'吐出量',value:'1.6 m³/min'},{label:'全揚程',value:'14 m'}],
+      specsD:[{label:'口径',value:'200 mm'},{label:'吐出量',value:'4.5 m³/min'},{label:'全揚程',value:'18 m'}],
+      toContact:function(){nav('contact');}, toProducts:function(){nav('products');}, toRelated:function(){nav('related');}
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/colors.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/typography.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/shape.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/motion.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/base.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/interactions.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/styles.css">
+<script src="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.js"></script>
+<style>body{margin:0;background:#fff}a{color:#0f72af}a:hover{color:#1e88c9}</style>
+</helmet>
+<div style="font-family:'Noto Sans JP',sans-serif;letter-spacing:0.04em">
+<x-import component-from-global-scope="DesignSystem_d5d132.UtilityBar" on-navigate="{{ nav }}" hint-size="100%,36px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.SiteHeader" items="{{ navItems }}" cta-label="お問い合わせ" on-navigate="{{ nav }}" hint-size="100%,124px"></x-import>
+<section data-screen-label="ファーストビュー" style="position:relative;background:#14212c;overflow:hidden">
+{{ heroImg }}
+<div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,33,44,.92) 0%,rgba(20,33,44,.80) 42%,rgba(20,33,44,.28) 72%,rgba(20,33,44,.15) 100%)"></div>
+<div style="position:relative;max-width:1200px;margin:0 auto;padding:96px 24px;display:flex;flex-direction:column;gap:24px">
+<span class="nk-enter nk-enter-1" style="display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:700;letter-spacing:0.05em;color:#55b2eb"><span style="width:28px;height:4px;border-radius:2px;background:#55b2eb"></span>水中ポンプ・関連機材のレンタル</span>
+<h1 class="nk-enter nk-enter-2" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:60px;font-weight:700;line-height:1.32;letter-spacing:0.02em;margin:0;color:#ffffff;max-width:820px">{{ heroTitle1 }}<br>{{ heroTitle2 }}</h1>
+<p class="nk-enter nk-enter-3" style="margin:0;max-width:600px;font-size:18px;line-height:1.9;color:#e3eaef">水中ポンプ・発電機・ホース・送水管。機材選定から搬入・設置まで、現場に合わせてまとめてご相談いただけます。</p>
+<div class="nk-enter nk-enter-4" style="display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="on-slab" size="lg" on-click="{{ toContact }}" hint-size="260px,52px">現場条件を伝えて相談する</x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="outline-slab" size="lg" on-click="{{ toProducts }}" hint-size="240px,52px">レンタルできる機材を見る</x-import>
+</div>
+<span style="font-size:14px;color:#aebbc5">機材が決まっていなくても、ご相談いただけます。</span>
+</div>
+<div class="nk-enter nk-enter-5" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:4px">
+<span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:9999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#ffffff;font-size:14px"><span style="width:6px;height:6px;border-radius:3px;background:#55b2eb"></span>機材選定のご相談</span>
+<span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:9999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#ffffff;font-size:14px"><span style="width:6px;height:6px;border-radius:3px;background:#55b2eb"></span>発電機・ホース・送水管の手配</span>
+<span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:9999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#ffffff;font-size:14px"><span style="width:6px;height:6px;border-radius:3px;background:#55b2eb"></span>搬入・設置への対応</span>
+</div>
+</div>
+</section>
+<section data-screen-label="よくある現場の困りごと" style="background:#f5f8fa;padding:96px 0">
+<div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="COMMON CONCERNS" title="こんなお困りごとは、そのままご相談ください。" lead="現場の状況をお聞きして、必要な機材と対応内容を当社がご提案します。条件が整理できていなくても構いません。" hint-size="100%,150px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-top:40px">
+<div style="display:flex;align-items:center;gap:14px;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;padding:20px 24px"><span style="flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:#e8f4fc;color:#0f72af"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="droplets" size="18" hint-size="18px,18px"></x-import></span><span style="font-size:15px;line-height:1.7;color:#26343f">どのポンプを選べばよいか分からない</span></div>
+<div style="display:flex;align-items:center;gap:14px;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;padding:20px 24px"><span style="flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:#e8f4fc;color:#0f72af"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="gauge" size="18" hint-size="18px,18px"></x-import></span><span style="font-size:15px;line-height:1.7;color:#26343f">必要な口径や台数が分からない</span></div>
+<div style="display:flex;align-items:center;gap:14px;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;padding:20px 24px"><span style="flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:#e8f4fc;color:#0f72af"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="zap" size="18" hint-size="18px,18px"></x-import></span><span style="font-size:15px;line-height:1.7;color:#26343f">電源のない現場で発電機も必要</span></div>
+<div style="display:flex;align-items:center;gap:14px;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;padding:20px 24px"><span style="flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:#e8f4fc;color:#0f72af"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="cable" size="18" hint-size="18px,18px"></x-import></span><span style="font-size:15px;line-height:1.7;color:#26343f">ホースや送水管までまとめて手配したい</span></div>
+<div style="display:flex;align-items:center;gap:14px;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;padding:20px 24px"><span style="flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:10px;background:#e8f4fc;color:#0f72af"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="truck" size="18" hint-size="18px,18px"></x-import></span><span style="font-size:15px;line-height:1.7;color:#26343f">機材の搬入・設置まで相談したい</span></div>
+</div>
+</div>
+</section>
+<section data-screen-label="レンタルできる水中ポンプ" style="padding:96px 0">
+<div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="RENTAL LINEUP" title="レンタルできる水中ポンプ" lead="用途別に主な機材をご紹介します。レンタル料金は機種・台数・工期・配管により変わるため、都度お見積もりでご提示します。" hint-size="100%,150px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px">
+<x-import component-from-global-scope="DesignSystem_d5d132.ProductCard" name="大水量水中ポンプ 150mm" model="F-1660A" image="assets/photos/pump-f-1660a.png" specs="{{ specsA }}" quote-note="レンタル料金はお見積もりでご提示します。" cta-label="仕様と用途を見る" on-select="{{ toDetail }}" hint-size="100%,480px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.ProductCard" name="サンド用水中ポンプ 100mm" model="KRS-1022-51" image="assets/photos/pump-krs-1022-51.png" specs="{{ specsB }}" quote-note="レンタル料金はお見積もりでご提示します。" cta-label="仕様と用途を見る" on-select="{{ toDetail }}" hint-size="100%,480px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.ProductCard" name="汚水・排水用水中ポンプ 150mm" model="U-65014" image="assets/photos/pump-u-65014.png" specs="{{ specsC }}" quote-note="レンタル料金はお見積もりでご提示します。" cta-label="仕様と用途を見る" on-select="{{ toDetail }}" hint-size="100%,480px"></x-import>
+</div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:40px">
+<x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="outline-ink" size="md" on-click="{{ toProducts }}" hint-size="220px,44px">レンタル機材の一覧を見る</x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="primary" size="md" on-click="{{ toContact }}" hint-size="220px,44px">機材選びから相談する</x-import>
+</div>
+</div>
+</section>
+<section data-screen-label="関連機材まで一式" style="background:#f5f8fa;padding:96px 0">
+<div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="FULL SET" title="関連機材まで、一式でご相談いただけます。" lead="ポンプ本体だけでなく、現場で必要になる関連機材もまとめて手配します。手配先を分けずに済みます。" hint-size="100%,150px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px">
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="zap" title="発電機" body="電源のない現場向けに、ポンプの容量に合わせた発電機を手配します。" hint-size="100%,220px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="cable" title="ホース" body="口径・長さ・本数を現場の排水距離に合わせてご用意します。" hint-size="100%,220px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="layers" title="送水管" body="長距離の送水や仮設配管が必要な現場では、送水管もあわせてご相談いただけます。" hint-size="100%,220px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="package" title="その他の関連機材" body="ケーブル・フロートなど、現場に応じて必要な機材をご案内します。" hint-size="100%,220px"></x-import>
+</div>
+<p style="margin:24px 0 0;font-size:12px;color:#6b7a86">※ 関連機材は案件に応じて手配します。取扱範囲・手配条件はお問い合わせの際にご確認ください。</p>
+</div>
+</section>
+<section data-screen-label="計画から設置まで" style="padding:96px 0">
+<div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="ONE WINDOW" title="計画から設置まで、窓口はひとつ。" lead="機材の貸し出しだけでは終わりません。排水計画のご相談から機材選定、搬入、現場での設置まで、同じ担当者が通してお引き受けします。" hint-size="100%,160px"></x-import>
+<div style="margin-top:40px">
+<x-import component-from-global-scope="DesignSystem_d5d132.StepFlow" steps="{{ scopeSteps }}" hint-size="100%,200px"></x-import>
+</div>
+<div style="margin-top:32px">
+<x-import component-from-global-scope="DesignSystem_d5d132.Notice" tone="info" title="水理計算・流量測定に関するご相談" hint-size="100%,110px">必要な水量や機材構成が決まっていない段階でも、現場条件をもとにご相談いただけます。詳しくは<a href="support-page.html">サポート内容</a>をご覧ください。※ 対応範囲は現場条件により異なります。</x-import>
+</div>
+</div>
+</section>
+<section data-screen-label="対応事例" style="background:#f5f8fa;padding:96px 0">
+<div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="CASE STUDIES" title="対応事例" lead="実際の現場でのご相談内容と、当社の対応範囲をご紹介します。" hint-size="100%,150px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px">
+<a href="case-detail.html" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 1px 2px rgba(20,33,44,.06);transition:box-shadow 180ms ease" style-hover="box-shadow:0 6px 16px rgba(20,33,44,.12)">
+<img src="assets/photos/site-channel-sunset.webp" alt="護岸築造工事の仮排水" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block">
+<div style="display:flex;flex-direction:column;gap:10px;padding:20px 24px 24px">
+<div style="display:flex;gap:8px;flex-wrap:wrap"><span style="font-size:12px;padding:4px 10px;border-radius:9999px;background:#eef3f7;color:#26343f">河川改修</span><span style="font-size:12px;padding:4px 10px;border-radius:9999px;background:#eef3f7;color:#26343f">旭川市近郊</span></div>
+<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:18px;font-weight:700;line-height:1.45;color:#14212c">護岸築造工事の仮排水を、計画から設置まで</span>
+<span style="font-family:'Roboto Mono',monospace;font-size:13px;color:#6b7a86">F-1660A ×2／発電機／送水管</span>
+</div>
+</a>
+<a href="case-studies.html" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 1px 2px rgba(20,33,44,.06);transition:box-shadow 180ms ease" style-hover="box-shadow:0 6px 16px rgba(20,33,44,.12)">
+<img src="assets/photos/site-urban-canal.webp" alt="市街地水路の水替え" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block">
+<div style="display:flex;flex-direction:column;gap:10px;padding:20px 24px 24px">
+<div style="display:flex;gap:8px;flex-wrap:wrap"><span style="font-size:12px;padding:4px 10px;border-radius:9999px;background:#eef3f7;color:#26343f">水路改修</span><span style="font-size:12px;padding:4px 10px;border-radius:9999px;background:#eef3f7;color:#26343f">市街地</span></div>
+<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:18px;font-weight:700;line-height:1.45;color:#14212c">市街地水路の水替えを、2台並列運転で対応</span>
+<span style="font-family:'Roboto Mono',monospace;font-size:13px;color:#6b7a86">U-65014 ×2／ホース</span>
+</div>
+</a>
+<a href="case-studies.html" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 1px 2px rgba(20,33,44,.06);transition:box-shadow 180ms ease" style-hover="box-shadow:0 6px 16px rgba(20,33,44,.12)">
+<img src="assets/photos/site-winter-hoses.webp" alt="冬期の配管取り回し" style="width:100%;aspect-ratio:16/9;object-fit:cover;display:block">
+<div style="display:flex;flex-direction:column;gap:10px;padding:20px 24px 24px">
+<div style="display:flex;gap:8px;flex-wrap:wrap"><span style="font-size:12px;padding:4px 10px;border-radius:9999px;background:#eef3f7;color:#26343f">仮排水</span><span style="font-size:12px;padding:4px 10px;border-radius:9999px;background:#eef3f7;color:#26343f">冬期施工</span></div>
+<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:18px;font-weight:700;line-height:1.45;color:#14212c">冬期現場の排水を、配管の取り回しまで含めて</span>
+<span style="font-family:'Roboto Mono',monospace;font-size:13px;color:#6b7a86">KRS-1022-51／ホース／送水管</span>
+</div>
+</a>
+</div>
+<div style="display:flex;justify-content:center;margin-top:40px">
+<x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="outline-ink" size="md" on-click="{{ toCases }}" hint-size="200px,44px">対応事例をすべて見る</x-import>
+</div>
+</div>
+</section>
+<section data-screen-label="対応エリアとFAQ" style="padding:96px 0">
+<div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:5fr 7fr;gap:64px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:24px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="SERVICE AREA" title="対応エリア" lead="旭川市とその近郊を中心に対応しています。" hint-size="100%,120px"></x-import>
+<div style="display:flex;flex-direction:column;gap:16px;background:#f5f8fa;border-radius:16px;padding:28px">
+<div style="display:flex;align-items:flex-start;gap:12px"><span style="color:#0f72af;margin-top:2px"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="map-pin" size="20" hint-size="20px,20px"></x-import></span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-weight:700;color:#14212c">拠点</span><span style="font-size:14px;line-height:1.9;color:#26343f">北海道旭川市豊岡3条8丁目3番19号</span></div></div>
+<div style="display:flex;align-items:flex-start;gap:12px"><span style="color:#0f72af;margin-top:2px"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="truck" size="20" hint-size="20px,20px"></x-import></span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-weight:700;color:#14212c">通常の対応エリア</span><span style="font-size:14px;line-height:1.9;color:#26343f">旭川市および近郊の現場</span></div></div>
+<p style="margin:0;font-size:12px;color:#6b7a86">※ 案件により北海道内もご相談いただけます。まずは現場の場所をお知らせください。</p>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="FAQ" title="よくあるご質問" hint-size="100%,100px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.FaqAccordion" items="{{ faqItems }}" default-open="0" hint-size="100%,320px"></x-import>
+<a href="faq.html" style="font-size:14px;font-weight:500">よくあるご質問をすべて見る ›</a>
+</div>
+</div>
+</section>
+<x-import component-from-global-scope="DesignSystem_d5d132.CtaBand" title="現場条件をお聞かせください。" lead="機材が決まっていなくても、ご相談いただけます。水量・揚程・電源などの条件は、分かる範囲で構いません。" primary-label="現場条件を伝えて相談する" secondary-label="レンタルできる機材を見る" on-primary="{{ toContact }}" on-secondary="{{ toProducts }}" hours="受付時間はご確認のうえ掲載します（仮）" mark-src="assets/logo-mark.png" hint-size="100%,300px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.SiteFooter" asset-base="assets" on-navigate="{{ nav }}" hint-size="100%,420px"></x-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroCopy&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;案A：水中ポンプは、水のナカセ。&quot;,&quot;options&quot;:[&quot;案A：水中ポンプは、水のナカセ。&quot;,&quot;案B：現場の水替え、計画から設置まで。&quot;,&quot;案C：その現場に合うポンプ、一緒に選びます。&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;メインコピー（3案）&quot;},&quot;heroPhoto&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;夕景の護岸現場&quot;,&quot;options&quot;:[&quot;夕景の護岸現場&quot;,&quot;市街地の水路（作業員）&quot;,&quot;市街地の並列運転&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;ファーストビュー写真&quot;}}">
+class Component extends DCLogic {
+  nav(k){
+    var P={home:'index',products:'products',detail:'product-detail',related:'related-equipment',support:'support-page',cases:'case-studies',caseDetail:'case-detail',flow:'flow',faq:'faq',company:'company',contact:'contact',done:'thanks'};
+    if(P[k])window.location.href=P[k]+'.html';
+  }
+  renderVals(){
+    var copy=this.props.heroCopy||'案A：水中ポンプは、水のナカセ。';
+    var titles={'案A':['水中ポンプは、','水のナカセ。'],'案B':['現場の水替え、','計画から設置まで。'],'案C':['その現場に合うポンプ、','一緒に選びます。']};
+    var t=titles[copy.slice(0,2)]||titles['案A'];
+    var photos={'夕景の護岸現場':'site-channel-sunset.webp','市街地の水路（作業員）':'site-canal-crew.webp','市街地の並列運転':'site-urban-canal.webp'};
+    var ph=photos[this.props.heroPhoto]||photos['夕景の護岸現場'];
+    var nav=this.nav.bind(this);
+    return {
+      nav:nav,
+      navItems:[{label:'水中ポンプレンタル',key:'products'},{label:'関連機材',key:'related'},{label:'サポート内容',key:'support'},{label:'対応事例',key:'cases'},{label:'ご相談の流れ',key:'flow'},{label:'よくあるご質問',key:'faq'},{label:'会社案内',key:'company'}],
+      heroTitle1:t[0], heroTitle2:t[1],
+      heroImg:React.createElement('img',{className:'nk-hero-photo',src:'assets/photos/'+ph,alt:'水替え作業の現場',style:{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover',objectPosition:'center 60%'}}),
+      toContact:function(){nav('contact');}, toProducts:function(){nav('products');},
+      toDetail:function(){nav('detail');}, toCases:function(){nav('cases');},
+      specsA:[{label:'口径',value:'150 mm'},{label:'吐出量',value:'2.4 m³/min'},{label:'全揚程',value:'22 m'}],
+      specsB:[{label:'口径',value:'100 mm'},{label:'吐出量',value:'0.9 m³/min'},{label:'全揚程',value:'15 m'}],
+      specsC:[{label:'口径',value:'150 mm'},{label:'吐出量',value:'1.6 m³/min'},{label:'全揚程',value:'14 m'}],
+      scopeSteps:[
+        {title:'計画',body:'水量・排水距離・工期をお聞きし、排水の進め方からご相談いただけます。'},
+        {title:'機材選定',body:'必要な吐出量と全揚程を算出し、機種・台数・関連機材をご提案します。'},
+        {title:'搬入',body:'ポンプ・発電機・ホース・送水管を一式で現場までお届けします。'},
+        {title:'設置',body:'現場での据付・配管の接続・試運転までご相談いただけます。'}
+      ],
+      faqItems:[
+        {q:'機種が決まっていなくても相談できますか',a:'はい。現場の状況を分かる範囲でお知らせいただければ、必要な機種と台数を当社がご提案します。'},
+        {q:'料金はどのように決まりますか',a:'機種・台数・工期・配管・地域により変わるため、都度お見積もりで一式のご金額をご提示します。'},
+        {q:'発電機やホースもまとめて相談できますか',a:'はい。ポンプとあわせて、案件に応じて関連機材を一式で手配します。'},
+        {q:'どのエリアまで対応できますか',a:'旭川市とその近郊を中心に対応しています。案件により北海道内もご相談いただけます。'}
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
