@@ -28,7 +28,7 @@
 <x-import component-from-global-scope="DesignSystem_d5d132.Breadcrumb" items="{{ crumbs }}" hint-size="100%,44px"></x-import>
 <section data-screen-label="ページヘッダー" style="padding:64px 0 40px">
 <div style="max-width:1200px;margin:0 auto;padding:0 24px">
-<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" as="h1" eyebrow="FULL SET" title="関連機材" lead="ポンプだけでは、現場の排水は動きません。発電機・ホース・送水管まで、ポンプの選定にあわせて一式でご相談いただけます。手配先を分けずに済みます。" hint-size="100%,150px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" as="h1" eyebrow="FULL SET" title="関連機材" lead="ポンプだけでは、現場の排水は動きません。発電機・キャブタイヤケーブル・操作盤・分電盤・大口径サクションホース・大口径送水用鋼管まで、ポンプの選定にあわせて一式でご相談いただけます。" hint-size="100%,150px"></x-import>
 </div>
 </section>
 <section data-screen-label="機材カテゴリー" style="padding:0 0 96px">
@@ -80,10 +80,11 @@ class Component extends DCLogic {
       navItems:[{label:'水中ポンプレンタル',key:'products'},{label:'関連機材',key:'related'},{label:'サポート内容',key:'support'},{label:'対応事例',key:'cases'},{label:'ご相談の流れ',key:'flow'},{label:'よくあるご質問',key:'faq'},{label:'会社案内',key:'company'}],
       crumbs:[{label:'トップ',href:'index.html'},{label:'関連機材'}],
       groups:[
-        {icon:'zap',title:'発電機',body:'電源のない現場向けに、ポンプの容量に合わせた発電機を手配します。台数が増える場合の容量計算もあわせてご相談いただけます。',photoLabel:'発電機の写真',tags:['容量に合わせて選定','ケーブルとあわせて手配']},
-        {icon:'cable',title:'ホース',body:'口径・長さ・本数を、現場の排水距離と取り回しに合わせてご用意します。',photoLabel:'ホースの写真',tags:['各口径に対応','長さ・本数は現場に合わせて']},
-        {icon:'layers',title:'送水管',body:'長距離の送水や仮設配管が必要な現場では、送水管もあわせてご相談いただけます。配管の取り回しの検討からお手伝いします。',photoLabel:'送水管の写真',tags:['長距離送水','仮設配管のご相談']},
-        {icon:'package',title:'その他の関連機材',body:'ケーブル・フロート・継手など、現場に応じて必要になる機材をご案内します。品目はお問い合わせの際にご確認ください。',photoLabel:'その他機材の写真',tags:['ケーブル','フロート','継手 ほか']}
+        {icon:'zap',title:'発電機',body:'電源のない現場向けに、ポンプの出力と始動電流に合わせた発電機を手配します。複数台を並列運転する場合の容量計算もあわせてご相談いただけます。',photoLabel:'発電機の写真',tags:['出力・始動電流から選定','200V〜400V の機種に対応']},
+        {icon:'cable',title:'キャブタイヤケーブル',body:'ポンプから電源設備までの距離に合わせて、キャブタイヤケーブルをご用意します。ケーブルの太さと長さは電圧降下を踏まえてご提案します。',photoLabel:'キャブタイヤケーブルの写真',tags:['距離に合わせた長さ','電圧降下を踏まえて選定']},
+        {icon:'settings',title:'操作盤・分電盤',body:'スター・デルタ始動に対応した操作盤、複数台運転のための分電盤をあわせて手配します。',photoLabel:'操作盤・分電盤の写真',tags:['スター・デルタ始動に対応','複数台の運転']},
+        {icon:'waves',title:'大口径サクションホース',body:'大口径のサクションホースを、口径・長さ・本数を現場の取り回しに合わせてご用意します。',photoLabel:'サクションホースの写真',tags:['大口径に対応','長さ・本数は現場に合わせて']},
+        {icon:'layers',title:'大口径送水用鋼管',body:'長距離の送水が必要な現場向けに、大口径の送水用鋼管を手配します。配管ルートの検討と、設置の指導までご相談いただけます。',photoLabel:'送水用鋼管の写真',tags:['長距離送水','配管ルートの検討','設置指導']}
       ],
       toContact:function(){nav('contact');}, toProducts:function(){nav('products');}
     };

@@ -26,20 +26,27 @@
 <x-import component-from-global-scope="DesignSystem_d5d132.UtilityBar" on-navigate="{{ nav }}" hint-size="100%,36px"></x-import>
 <x-import component-from-global-scope="DesignSystem_d5d132.SiteHeader" items="{{ navItems }}" active="水中ポンプレンタル" cta-label="お問い合わせ" on-navigate="{{ nav }}" hint-size="100%,124px"></x-import>
 <x-import component-from-global-scope="DesignSystem_d5d132.Breadcrumb" items="{{ crumbs }}" hint-size="100%,44px"></x-import>
-<section data-screen-label="機材概要" style="padding:64px 0 96px">
-<div style="max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:6fr 6fr;gap:64px;align-items:start">
+<section data-screen-label="機材概要" style="padding:48px 0 96px">
+<div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:40px">
+<x-import component-from-global-scope="DesignSystem_d5d132.CategoryTabs" items="{{ models }}" value="{{ model }}" on-change="{{ setModel }}" hint-size="100%,44px"></x-import>
+<div style="display:grid;grid-template-columns:6fr 6fr;gap:64px;align-items:start">
 <div style="display:flex;flex-direction:column;gap:12px">
-<div style="border:1px solid #dde5eb;border-radius:16px;background:#ffffff;padding:32px"><img src="assets/photos/pump-f-1660a.png" alt="大水量水中ポンプ F-1660A" style="width:100%;aspect-ratio:1/1;object-fit:contain;display:block"></div>
-<p style="margin:0;font-size:12px;color:#6b7a86">※ 使用時・接続部の写真は撮影またはご支給をお願いします。</p>
+<div style="border:1px solid #dde5eb;border-radius:16px;background:#ffffff;padding:32px">{{ photo }}</div>
+<p style="margin:0;font-size:12px;color:#6b7a86">※ 仕様値は 60Hz 仕様の性能表に基づく記載です。50Hz で使用する場合は 50Hz 用の仕様書をご確認ください。</p>
 </div>
 <div style="display:flex;flex-direction:column;gap:24px">
 <div style="display:flex;flex-direction:column;gap:8px">
 <span style="display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:0.05em;color:#0f72af"><span style="width:28px;height:4px;border-radius:2px;background:#0f72af"></span>大水量ポンプ</span>
-<h1 style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:36px;font-weight:700;line-height:1.32;margin:0;color:#14212c">大水量水中ポンプ 150mm</h1>
-<span style="font-family:'Roboto Mono',monospace;font-size:15px;color:#6b7a86">F-1660A</span>
+<h1 style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:36px;font-weight:700;line-height:1.32;margin:0;color:#14212c">{{ title }}</h1>
+<span style="font-family:'Roboto Mono',monospace;font-size:15px;color:#6b7a86">{{ modelCode }}</span>
 </div>
-<p style="margin:0;font-size:15px;line-height:1.9;color:#26343f;max-width:560px">河川改修や護岸工事など、大量の水替えが必要な現場向けの機種です。台数を組み合わせて、必要な排水量に合わせた構成をご提案します。</p>
-<x-import component-from-global-scope="DesignSystem_d5d132.SpecTable" rows="{{ specRows }}" caption="主要仕様（仮の値を含みます）" hint-size="100%,320px"></x-import>
+<p style="margin:0;font-size:15px;line-height:1.9;color:#26343f;max-width:560px">{{ lead }}</p>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+<div style="display:flex;flex-direction:column;gap:4px;background:#f5f8fa;border-radius:16px;padding:18px 20px"><span style="font-size:12px;color:#6b7a86">規定吐出量</span><span style="font-family:'Roboto Mono',monospace;font-size:20px;font-weight:500;color:#14212c">{{ kpiFlow }}</span></div>
+<div style="display:flex;flex-direction:column;gap:4px;background:#f5f8fa;border-radius:16px;padding:18px 20px"><span style="font-size:12px;color:#6b7a86">1時間換算</span><span style="font-family:'Roboto Mono',monospace;font-size:20px;font-weight:500;color:#14212c">{{ kpiHour }}</span></div>
+<div style="display:flex;flex-direction:column;gap:4px;background:#f5f8fa;border-radius:16px;padding:18px 20px"><span style="font-size:12px;color:#6b7a86">規定全揚程</span><span style="font-family:'Roboto Mono',monospace;font-size:20px;font-weight:500;color:#14212c">{{ kpiHead }}</span></div>
+</div>
+<x-import component-from-global-scope="DesignSystem_d5d132.SpecTable" rows="{{ specRows }}" caption="主要仕様（60Hz 仕様）" hint-size="100%,460px"></x-import>
 <div style="display:flex;flex-direction:column;gap:10px">
 <div style="display:flex;gap:12px;flex-wrap:wrap">
 <x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="primary" size="lg" on-click="{{ toContact }}" hint-size="260px,52px">この機材について相談する</x-import>
@@ -49,44 +56,72 @@
 </div>
 </div>
 </div>
+</div>
 </section>
-<section data-screen-label="主な用途と注意" style="background:#f5f8fa;padding:96px 0">
+<section data-screen-label="特徴と向いている現場" style="background:#f5f8fa;padding:96px 0">
 <div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:6fr 6fr;gap:64px;align-items:start">
-<div style="display:flex;flex-direction:column;gap:20px">
-<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="USE CASES" title="主な用途" hint-size="100%,100px"></x-import>
+<div style="display:flex;flex-direction:column;gap:24px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="FEATURES" title="この機種の特徴" hint-size="100%,100px"></x-import>
 <div style="display:flex;flex-direction:column;gap:12px">
-<div style="display:flex;align-items:center;gap:12px;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;padding:16px 20px"><span style="color:#0f72af"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="droplets" size="18" hint-size="18px,18px"></x-import></span><span style="font-size:14px;color:#26343f">河川改修・護岸工事の仮排水</span></div>
-<div style="display:flex;align-items:center;gap:12px;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;padding:16px 20px"><span style="color:#0f72af"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="droplets" size="18" hint-size="18px,18px"></x-import></span><span style="font-size:14px;color:#26343f">大水量の水替え・締切排水</span></div>
-<div style="display:flex;align-items:center;gap:12px;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;padding:16px 20px"><span style="color:#0f72af"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="droplets" size="18" hint-size="18px,18px"></x-import></span><span style="font-size:14px;color:#26343f">雨水・湧水の排水</span></div>
+<sc-for list="{{ features }}" as="f" hint-placeholder-count="5">
+<div style="display:flex;align-items:flex-start;gap:12px;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;padding:16px 20px"><span style="flex:0 0 auto;margin-top:7px;width:6px;height:6px;border-radius:3px;background:#0f72af"></span><span style="font-size:14px;line-height:1.9;color:#26343f">{{ f }}</span></div>
+</sc-for>
 </div>
 </div>
-<div style="display:flex;flex-direction:column;gap:20px">
-<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="NOTES" title="使用時の注意" hint-size="100%,100px"></x-import>
-<x-import component-from-global-scope="DesignSystem_d5d132.Notice" tone="warn" title="ご確認ください" hint-size="100%,140px">運転には所定の電源容量が必要です。電源のない現場では発電機をあわせて手配します。土砂を多く含む水にはサンド用機種をご提案する場合があります。※ 注意事項の原稿はご支給資料をもとに確定します。</x-import>
+<div style="display:flex;flex-direction:column;gap:24px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="USE CASES" title="向いている現場" hint-size="100%,100px"></x-import>
+<div style="display:flex;flex-direction:column;gap:12px">
+<sc-for list="{{ useCases }}" as="u" hint-placeholder-count="4">
+<div style="display:flex;align-items:center;gap:12px;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;padding:16px 20px"><span style="color:#0f72af"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="droplets" size="18" hint-size="18px,18px"></x-import></span><span style="font-size:14px;line-height:1.9;color:#26343f">{{ u }}</span></div>
+</sc-for>
+</div>
+<x-import component-from-global-scope="DesignSystem_d5d132.Notice" tone="warn" title="選定時にご確認いただきたい点" hint-size="100%,200px">{{ cautionsText }}</x-import>
 </div>
 </div>
 </section>
-<section data-screen-label="あわせて必要な機材" style="padding:96px 0">
+<section data-screen-label="2機種の使い分け" style="padding:96px 0">
+<div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="COMPARISON" title="2機種の使い分け" lead="どちらの機種が適するかは、必要な排水量・現場の電源・搬入条件によって変わります。判断がつかない場合は現場条件をお聞かせください。" hint-size="100%,160px"></x-import>
+<div style="margin-top:40px;border:1px solid #dde5eb;border-radius:16px;overflow:hidden">
+<div style="display:grid;grid-template-columns:3fr 4fr 4fr;background:#eef3f7">
+<span style="padding:16px 24px;font-size:13px;font-weight:700;color:#26343f">項目</span>
+<span style="padding:16px 24px;font-family:'Roboto Mono',monospace;font-size:13px;font-weight:500;color:#14212c">F-1660A</span>
+<span style="padding:16px 24px;font-family:'Roboto Mono',monospace;font-size:13px;font-weight:500;color:#14212c">U-65014B</span>
+</div>
+<sc-for list="{{ compareRows }}" as="r" hint-placeholder-count="7">
+<div style="display:grid;grid-template-columns:3fr 4fr 4fr;border-top:1px solid #dde5eb">
+<span style="padding:16px 24px;font-size:14px;color:#4c5a66;background:#f5f8fa">{{ r.label }}</span>
+<span style="padding:16px 24px;font-family:'Roboto Mono',monospace;font-size:14px;color:#26343f">{{ r.a }}</span>
+<span style="padding:16px 24px;font-family:'Roboto Mono',monospace;font-size:14px;color:#26343f">{{ r.b }}</span>
+</div>
+</sc-for>
+</div>
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-top:32px">
+<div style="display:flex;flex-direction:column;gap:12px;border:1px solid #dde5eb;border-radius:16px;padding:28px">
+<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:18px;font-weight:700;color:#14212c">F-1660A を選ぶ場合</span>
+<span style="font-size:14px;line-height:1.9;color:#4c5a66">排水量を最優先したい現場、1 時間あたり 1,000 m³ を超える排水が必要な現場に適します。400/440V 電源と揚重設備の確認が前提です。</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;border:1px solid #dde5eb;border-radius:16px;padding:28px">
+<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:18px;font-weight:700;color:#14212c">U-65014B を選ぶ場合</span>
+<span style="font-size:14px;line-height:1.9;color:#4c5a66">200V 電源を使用する現場、搬入経路やクレーン能力に制約がある現場、砂混じり水による摩耗が懸念される現場に適します。</span>
+</div>
+</div>
+<div style="margin-top:32px">
+<x-import component-from-global-scope="DesignSystem_d5d132.Notice" tone="info" title="性能値の前提" hint-size="100%,150px">記載の性能値は清水を前提とした 60Hz 仕様の想定値です。実際の吐出量は実揚程・配管長・管径・曲がり・ホース抵抗・固形物濃度によって変化します。正式な機種選定では、現場条件から全揚程と必要吐出量を算出してご提案します。発電機・制御盤は定格出力だけでなく、始動方式と始動電流を考慮して選定します。</x-import>
+</div>
+</div>
+</section>
+<section data-screen-label="あわせて必要な機材" style="background:#f5f8fa;padding:96px 0">
 <div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px">
 <x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="WORKS WITH" title="あわせて必要になる機材" lead="この機種とあわせて、現場に応じて次の機材を一式で手配します。" hint-size="100%,150px"></x-import>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px">
-<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="zap" title="発電機" body="ポンプの容量に合わせた発電機を手配します。" hint-size="100%,200px"></x-import>
-<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="cable" title="ホース" body="口径・長さを排水距離に合わせてご用意します。" hint-size="100%,200px"></x-import>
-<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="layers" title="送水管" body="長距離の送水が必要な現場でご相談いただけます。" hint-size="100%,200px"></x-import>
-<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="package" title="ケーブル・その他" body="電源までの距離に応じたケーブル等をご案内します。" hint-size="100%,200px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;margin-top:40px">
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="zap" title="発電機" body="始動方式と始動電流を踏まえ、容量に合わせた発電機を手配します。" hint-size="100%,200px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="settings" title="制御盤" body="スター・デルタ始動に対応した制御盤をあわせてご相談いただけます。" hint-size="100%,200px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="cable" title="ホース・送水管" body="吐出口の口径・フランジ仕様に合わせて配管をご用意します。" hint-size="100%,200px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="package" title="ケーブル・その他" body="ケーブル長は 10 m です。電源までの距離に応じて延長をご案内します。" hint-size="100%,200px"></x-import>
 </div>
 <div style="display:flex;justify-content:center;margin-top:40px">
 <x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="outline-ink" size="md" on-click="{{ toRelated }}" hint-size="180px,44px">関連機材を見る</x-import>
-</div>
-</div>
-</section>
-<section data-screen-label="関連機種" style="background:#f5f8fa;padding:96px 0">
-<div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px">
-<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="RELATED MODELS" title="関連する機種" hint-size="100%,100px"></x-import>
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px">
-<x-import component-from-global-scope="DesignSystem_d5d132.ProductCard" name="サンド用水中ポンプ 100mm" model="KRS-1022-51" image="assets/photos/pump-krs-1022-51.png" specs="{{ specsB }}" quote-note="レンタル料金はお見積もりでご提示します。" cta-label="この機材について相談する" on-select="{{ toContact }}" hint-size="100%,480px"></x-import>
-<x-import component-from-global-scope="DesignSystem_d5d132.ProductCard" name="汚水・排水用水中ポンプ 150mm" model="U-65014" image="assets/photos/pump-u-65014.png" specs="{{ specsC }}" quote-note="レンタル料金はお見積もりでご提示します。" cta-label="この機材について相談する" on-select="{{ toContact }}" hint-size="100%,480px"></x-import>
-<x-import component-from-global-scope="DesignSystem_d5d132.ProductCard" name="大水量水中ポンプ 200mm" model="F-2080A（仮）" image-label="機材写真（ご支給待ち）" specs="{{ specsD }}" quote-note="レンタル料金はお見積もりでご提示します。" cta-label="この機材について相談する" on-select="{{ toContact }}" hint-size="100%,480px"></x-import>
 </div>
 </div>
 </section>
@@ -96,27 +131,109 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
+  state={model:'F-1660A'};
   nav(k){
     var P={home:'index',products:'products',detail:'product-detail',related:'related-equipment',support:'support-page',cases:'case-studies',caseDetail:'case-detail',flow:'flow',faq:'faq',company:'company',contact:'contact',done:'thanks'};
     if(P[k])window.location.href=P[k]+'.html';
   }
   renderVals(){
     var nav=this.nav.bind(this);
+    var DATA={
+      'F-1660A':{
+        title:'大水量水中ポンプ 400mm',
+        image:'assets/photos/pump-f-1660a.png',
+        lead:'大量の水を短時間で排水・送水したい現場向けの機種です。規定全揚程 10 m で毎分 18 m³、1 時間あたり約 1,080 m³ の排水に対応します。',
+        kpiFlow:'18 m³/min', kpiHour:'約 1,080 m³/h', kpiHead:'10 m',
+        specRows:[
+          {label:'口径',value:'400mm'},
+          {label:'規定吐出量',value:'18 m³/min'},
+          {label:'1時間換算',value:'約 1,080 m³/h'},
+          {label:'規定全揚程',value:'10 m'},
+          {label:'電動機出力',value:'45 kW'},
+          {label:'電源',value:'400/440 V・60 Hz'},
+          {label:'定格電流',value:'83/78 A'},
+          {label:'始動方式',value:'スター・デルタ始動',mono:false},
+          {label:'本体質量',value:'1,030 kg'},
+          {label:'寸法',value:'幅1,707 × 奥行896 × 高さ1,793 mm'},
+          {label:'吐出口',value:'JIS10K 400A フランジ'}
+        ],
+        features:[
+          '同じ全揚程 10 m の U-65014B より、吐出量が約 29% 多い大水量タイプです。',
+          '1 時間あたり約 1,080 m³ の排水が可能で、大規模な仮排水や水替えに向いています。',
+          'インペラ、ケーシング、モータフレームなどの主要部分に FC200 を使用しています。',
+          'モータ側に SiC 同士のダブルタイプメカニカルシールを採用しています。',
+          'ミニチュアサーマルプロテクタと浸水検出器を内蔵しています。',
+          'ケーブル長は 10 m です。'
+        ],
+        useCases:[
+          '河川工事や護岸工事などの大規模な仮排水',
+          '短時間で大量の水を移送したい現場',
+          '排水量を優先し、400/440V 電源を確保できる現場',
+          '大型クレーンや十分な搬入・設置スペースを確保できる現場'
+        ],
+        cautions:'本体質量が 1,030 kg あるため、搬入経路と揚重設備の確認が必要です。400/440V 仕様のため、発電機や受電設備との適合確認が必要です。スター・デルタ始動に対応した制御盤と、始動電流を考慮した電源容量が必要です。摩耗性の高い砂や固形物を多く含む水では、使用条件を事前にご確認ください。'
+      },
+      'U-65014B':{
+        title:'大水量水中ポンプ 350mm',
+        image:'assets/photos/pump-u-65014.png',
+        lead:'全揚程 10 m で毎分 14 m³、1 時間あたり約 840 m³ を排水できる機種です。F-1660A より小型・軽量で、200V 電源に対応します。',
+        kpiFlow:'14 m³/min', kpiHour:'約 840 m³/h', kpiHead:'10 m',
+        specRows:[
+          {label:'口径',value:'350mm'},
+          {label:'規定吐出量',value:'14 m³/min'},
+          {label:'1時間換算',value:'約 840 m³/h'},
+          {label:'規定全揚程',value:'10 m'},
+          {label:'電動機出力',value:'37 kW'},
+          {label:'電源',value:'200 V・60 Hz'},
+          {label:'定格電流',value:'134 A'},
+          {label:'始動方式',value:'スター・デルタ始動',mono:false},
+          {label:'本体質量',value:'700 kg'},
+          {label:'寸法',value:'最大径670 × 高さ1,475 mm'},
+          {label:'吐出口',value:'350A 溶接用相フランジ'}
+        ],
+        features:[
+          'F-1660A より 330 kg 軽く、直径 670 mm の比較的コンパクトな構造です。',
+          '一般的な低圧三相 200V 電源に対応しています。',
+          'インペラとサクションカバーに高クロム鋳鉄を使用しています。',
+          '材質面では、砂混じり水などによる摩耗を意識した構成です。',
+          'モータ側にステンレスとカーボンのダブルタイプメカニカルシールを採用しています。',
+          'ミニチュアサーマルプロテクタと浸水検出器を内蔵しています。'
+        ],
+        useCases:[
+          '中規模から大規模の仮排水・水替え',
+          '200V 電源を使用する現場',
+          '搬入経路やクレーン能力に制約がある現場',
+          '砂や細かな固形物による摩耗が懸念される現場',
+          '毎時 840 m³ 程度の排水能力で対応できる現場'
+        ],
+        cautions:'定格電流が 134 A と大きいため、200V 発電機や電源設備の容量確認が必要です。スター・デルタ始動に対応した制御盤が必要です。高クロム鋳鉄を採用していますが、通過できる固形物径や許容濃度は別途確認が必要です。吐出口は 350A 溶接用相フランジのため、接続する配管やホースの仕様をご確認ください。'
+      }
+    };
+    var key=this.state.model;
+    var d=DATA[key];
     return {
       nav:nav,
       navItems:[{label:'水中ポンプレンタル',key:'products'},{label:'関連機材',key:'related'},{label:'サポート内容',key:'support'},{label:'対応事例',key:'cases'},{label:'ご相談の流れ',key:'flow'},{label:'よくあるご質問',key:'faq'},{label:'会社案内',key:'company'}],
-      crumbs:[{label:'トップ',href:'index.html'},{label:'水中ポンプレンタル',href:'products.html'},{label:'大水量水中ポンプ 150mm'}],
-      specRows:[
-        {label:'口径',value:'150 mm'},
-        {label:'吐出量',value:'2.4 m³/min'},
-        {label:'全揚程',value:'22 m'},
-        {label:'電源',value:'三相 200 V（仮）'},
-        {label:'質量',value:'ご支給資料により確定'},
-        {label:'水質',value:'清水・雨水・湧水',mono:false}
+      crumbs:[{label:'トップ',href:'index.html'},{label:'水中ポンプレンタル',href:'products.html'},{label:d.title}],
+      models:['F-1660A','U-65014B'],
+      model:key,
+      setModel:(v)=>this.setState({model:v}),
+      modelCode:key+'（60Hz）',
+      title:d.title, lead:d.lead,
+      kpiFlow:d.kpiFlow, kpiHour:d.kpiHour, kpiHead:d.kpiHead,
+      specRows:d.specRows, features:d.features, useCases:d.useCases,
+      cautionsText:d.cautions,
+      photo:React.createElement('img',{src:d.image,alt:d.title+' '+key,style:{width:'100%',aspectRatio:'1/1',objectFit:'contain',display:'block'}}),
+      compareRows:[
+        {label:'口径',a:'400mm',b:'350mm'},
+        {label:'規定吐出量',a:'18 m³/min',b:'14 m³/min'},
+        {label:'1時間換算',a:'約 1,080 m³/h',b:'約 840 m³/h'},
+        {label:'電動機出力',a:'45 kW',b:'37 kW'},
+        {label:'電源',a:'400/440 V',b:'200 V'},
+        {label:'定格電流',a:'83/78 A',b:'134 A'},
+        {label:'本体質量',a:'1,030 kg',b:'700 kg'},
+        {label:'耐摩耗材',a:'FC200 主体',b:'高クロム鋳鉄'}
       ],
-      specsB:[{label:'口径',value:'100 mm'},{label:'吐出量',value:'0.9 m³/min'},{label:'全揚程',value:'15 m'}],
-      specsC:[{label:'口径',value:'150 mm'},{label:'吐出量',value:'1.6 m³/min'},{label:'全揚程',value:'14 m'}],
-      specsD:[{label:'口径',value:'200 mm'},{label:'吐出量',value:'4.5 m³/min'},{label:'全揚程',value:'18 m'}],
       toContact:function(){nav('contact');}, toProducts:function(){nav('products');}, toRelated:function(){nav('related');}
     };
   }

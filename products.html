@@ -28,18 +28,30 @@
 <x-import component-from-global-scope="DesignSystem_d5d132.Breadcrumb" items="{{ crumbs }}" hint-size="100%,44px"></x-import>
 <section data-screen-label="ページヘッダー" style="padding:64px 0 0">
 <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:16px">
-<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" as="h1" eyebrow="RENTAL LINEUP" title="水中ポンプレンタル" lead="汚水・残水・大水量・サンド用まで、現場条件に合わせてご提案します。掲載のない機材や、機種が決まっていない段階のご相談も承ります。" hint-size="100%,150px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" as="h1" eyebrow="RENTAL LINEUP" title="水中ポンプレンタル" lead="河川工事などの水替えに使う水中ポンプを、現場条件に合わせてご提案します。カタログ掲載の機種のほか、サンドポンプ・高揚程ポンプなど 10 種類以上をお取り扱いできます。" hint-size="100%,150px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:16px">
+<div style="display:flex;flex-direction:column;gap:6px;background:#f5f8fa;border-radius:16px;padding:24px 28px"><span style="font-size:13px;color:#6b7a86">ポンプ出力</span><span style="font-family:'Roboto Mono',monospace;font-size:26px;font-weight:500;color:#14212c">11 〜 55 kW</span></div>
+<div style="display:flex;flex-direction:column;gap:6px;background:#f5f8fa;border-radius:16px;padding:24px 28px"><span style="font-size:13px;color:#6b7a86">吐出口口径</span><span style="font-family:'Roboto Mono',monospace;font-size:26px;font-weight:500;color:#14212c">100 〜 500mm</span></div>
+<div style="display:flex;flex-direction:column;gap:6px;background:#f5f8fa;border-radius:16px;padding:24px 28px"><span style="font-size:13px;color:#6b7a86">動力</span><span style="font-family:'Roboto Mono',monospace;font-size:26px;font-weight:500;color:#14212c">200 〜 400 V</span></div>
+</div>
 </div>
 </section>
 <section data-screen-label="機材一覧" style="padding:40px 0 96px">
 <div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:32px">
 <x-import component-from-global-scope="DesignSystem_d5d132.CategoryTabs" items="{{ cats }}" value="{{ cat }}" on-change="{{ setCat }}" hint-size="100%,44px"></x-import>
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
 <sc-for list="{{ products }}" as="p" hint-placeholder-count="6">
-<x-import component-from-global-scope="DesignSystem_d5d132.ProductCard" name="{{ p.name }}" model="{{ p.model }}" image="{{ p.image }}" image-label="{{ p.imageLabel }}" specs="{{ p.specs }}" quote-note="レンタル料金はお見積もりでご提示します。" cta-label="この機材について相談する" on-select="{{ toContact }}" hint-size="100%,480px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.ProductCard" name="{{ p.name }}" model="{{ p.model }}" image="{{ p.image }}" image-label="{{ p.imageLabel }}" specs="{{ p.specs }}" quote-note="レンタル料金はお見積もりでご提示します。" cta-label="{{ p.ctaLabel }}" on-select="{{ p.onSelect }}" hint-size="100%,480px"></x-import>
 </sc-for>
 </div>
-<p style="margin:0;font-size:12px;color:#6b7a86">※ 機材一覧は仮の内容です。掲載機材・仕様はご支給資料をもとに確定します。写真のない機材は撮影またはご支給をお願いします。</p>
+<div style="display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;border:1px solid #dde5eb;border-radius:16px;padding:32px 40px">
+<div style="display:flex;flex-direction:column;gap:8px;max-width:680px">
+<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:22px;font-weight:700;color:#14212c">掲載以外の機種も、10 種類以上からご提案します。</span>
+<span style="font-size:14px;line-height:1.9;color:#4c5a66">サンドポンプ、高揚程ポンプなど、現場の水質・揚程・電源に応じた機種をお取り扱いできます。掲載のない条件でもご相談ください。</span>
+</div>
+<x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="outline" size="md" on-click="{{ toContact }}" hint-size="200px,44px">機材選びから相談する</x-import>
+</div>
+<p style="margin:0;font-size:12px;color:#6b7a86">※ F-1660A・U-65014B は 60Hz 仕様の性能表に基づく記載です。ほかの機材の仕様は仮の値で、ご支給資料をもとに確定します。写真のない機材は撮影またはご支給をお願いします。</p>
 </div>
 </section>
 <section data-screen-label="機材選定に必要な条件" style="background:#f5f8fa;padding:96px 0">
@@ -78,9 +90,9 @@ class Component extends DCLogic {
   renderVals(){
     var nav=this.nav.bind(this);
     var all=[
-      {name:'大水量水中ポンプ 150mm',model:'F-1660A',cat:'大水量',image:'assets/photos/pump-f-1660a.png',specs:[{label:'口径',value:'150 mm'},{label:'吐出量',value:'2.4 m³/min'},{label:'全揚程',value:'22 m'}]},
+      {name:'大水量水中ポンプ 400mm',model:'F-1660A',cat:'大水量',image:'assets/photos/pump-f-1660a.png',specs:[{label:'口径',value:'400mm'},{label:'規定吐出量',value:'18 m³/min'},{label:'規定全揚程',value:'10 m'}]},
       {name:'サンド用水中ポンプ 100mm',model:'KRS-1022-51',cat:'サンド用',image:'assets/photos/pump-krs-1022-51.png',specs:[{label:'口径',value:'100 mm'},{label:'吐出量',value:'0.9 m³/min'},{label:'全揚程',value:'15 m'}]},
-      {name:'汚水・排水用水中ポンプ 150mm',model:'U-65014',cat:'汚水・排水用',image:'assets/photos/pump-u-65014.png',specs:[{label:'口径',value:'150 mm'},{label:'吐出量',value:'1.6 m³/min'},{label:'全揚程',value:'14 m'}]},
+      {name:'大水量水中ポンプ 350mm',model:'U-65014B',cat:'大水量',image:'assets/photos/pump-u-65014.png',specs:[{label:'口径',value:'350mm'},{label:'規定吐出量',value:'14 m³/min'},{label:'規定全揚程',value:'10 m'}]},
       {name:'汚水用水中ポンプ 50mm',model:'KTZ2-50（仮）',cat:'汚水・排水用',imageLabel:'機材写真（ご支給待ち）',specs:[{label:'口径',value:'50 mm'},{label:'吐出量',value:'0.3 m³/min'},{label:'全揚程',value:'12 m'}]},
       {name:'残水用水中ポンプ 50mm',model:'LSC-50（仮）',cat:'残水用',imageLabel:'機材写真（ご支給待ち）',specs:[{label:'口径',value:'50 mm'},{label:'吐出量',value:'0.17 m³/min'},{label:'残水処理',value:'水深 1 mm まで'}]},
       {name:'大水量水中ポンプ 200mm',model:'F-2080A（仮）',cat:'大水量',imageLabel:'機材写真（ご支給待ち）',specs:[{label:'口径',value:'200 mm'},{label:'吐出量',value:'4.5 m³/min'},{label:'全揚程',value:'18 m'}]}
@@ -93,7 +105,12 @@ class Component extends DCLogic {
       cats:['すべて','汚水・排水用','残水用','大水量','サンド用'],
       cat:cat,
       setCat:(v)=>this.setState({cat:v}),
-      products:cat==='すべて'?all:all.filter(function(p){return p.cat===cat;}),
+      products:(cat==='すべて'?all:all.filter(function(p){return p.cat===cat;})).map(function(p){
+        var documented=(p.model==='F-1660A'||p.model==='U-65014B');
+        p.ctaLabel=documented?'仕様と用途を見る':'この機材について相談する';
+        p.onSelect=documented?function(){nav('detail');}:function(){nav('contact');};
+        return p;
+      }),
       toContact:function(){nav('contact');}, toRelated:function(){nav('related');}, toFlow:function(){nav('flow');}
     };
   }

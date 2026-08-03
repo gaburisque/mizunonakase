@@ -31,8 +31,8 @@
 <div style="position:relative;max-width:1200px;margin:0 auto;padding:96px 24px;display:flex;flex-direction:column;gap:24px">
 <span class="nk-enter nk-enter-1" style="display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:700;letter-spacing:0.05em;color:#55b2eb"><span style="width:28px;height:4px;border-radius:2px;background:#55b2eb"></span>水中ポンプ・関連機材のレンタル</span>
 <h1 class="nk-enter nk-enter-2" style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:60px;font-weight:700;line-height:1.32;letter-spacing:0.02em;margin:0;color:#ffffff;max-width:820px">{{ heroTitle1 }}<br>{{ heroTitle2 }}</h1>
-<p class="nk-enter nk-enter-3" style="margin:0;max-width:600px;font-size:18px;line-height:1.9;color:#e3eaef">水中ポンプ・発電機・ホース・送水管。機材選定から搬入・設置まで、現場に合わせてまとめてご相談いただけます。</p>
-<div class="nk-enter nk-enter-4" style="display:flex;flex-direction:column;gap:10px">
+
+<p class="nk-enter nk-enter-3" style="margin:0;max-width:600px;font-size:18px;line-height:1.9;color:#e3eaef">水中ポンプ・発電機・ホース・送水管。機材選定から搬入・設置まで、ワンストップでサポートいたします。</p><div class="nk-enter nk-enter-4" style="display:flex;flex-direction:column;gap:10px">
 <div style="display:flex;gap:12px;flex-wrap:wrap">
 <x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="on-slab" size="lg" on-click="{{ toContact }}" hint-size="260px,52px">現場条件を伝えて相談する</x-import>
 <x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="outline-slab" size="lg" on-click="{{ toProducts }}" hint-size="240px,52px">レンタルできる機材を見る</x-import>
@@ -41,7 +41,7 @@
 </div>
 <div class="nk-enter nk-enter-5" style="display:flex;flex-wrap:wrap;gap:12px;margin-top:4px">
 <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:9999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#ffffff;font-size:14px"><span style="width:6px;height:6px;border-radius:3px;background:#55b2eb"></span>機材選定のご相談</span>
-<span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:9999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#ffffff;font-size:14px"><span style="width:6px;height:6px;border-radius:3px;background:#55b2eb"></span>発電機・ホース・送水管の手配</span>
+<span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:9999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#ffffff;font-size:14px"><span style="width:6px;height:6px;border-radius:3px;background:#55b2eb"></span>発電機・操作盤・鋼管の手配</span>
 <span style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:9999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#ffffff;font-size:14px"><span style="width:6px;height:6px;border-radius:3px;background:#55b2eb"></span>搬入・設置への対応</span>
 </div>
 </div>
@@ -60,11 +60,11 @@
 </section>
 <section data-screen-label="レンタルできる水中ポンプ" style="padding:96px 0">
 <div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px">
-<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="RENTAL LINEUP" title="レンタルできる水中ポンプ" lead="用途別に主な機材をご紹介します。レンタル料金は機種・台数・工期・配管により変わるため、都度お見積もりでご提示します。" hint-size="100%,150px"></x-import>
-<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px">
-<x-import component-from-global-scope="DesignSystem_d5d132.ProductCard" name="大水量水中ポンプ 150mm" model="F-1660A" image="assets/photos/pump-f-1660a.png" specs="{{ specsA }}" quote-note="レンタル料金はお見積もりでご提示します。" cta-label="仕様と用途を見る" on-select="{{ toDetail }}" hint-size="100%,480px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="RENTAL LINEUP" title="レンタルできる水中ポンプ" lead="河川工事などの水替えに使う水中ポンプを、出力 11〜55 kW・吐出口口径 100〜500mm・動力 200〜400V の範囲でご用意します。サンドポンプ・高揚程ポンプを含む 10 種類以上からご提案します。" hint-size="100%,160px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin-top:40px">
+<x-import component-from-global-scope="DesignSystem_d5d132.ProductCard" name="大水量水中ポンプ 400mm" model="F-1660A" image="assets/photos/pump-f-1660a.png" specs="{{ specsA }}" quote-note="レンタル料金はお見積もりでご提示します。" cta-label="仕様と用途を見る" on-select="{{ toDetail }}" hint-size="100%,480px"></x-import>
 <x-import component-from-global-scope="DesignSystem_d5d132.ProductCard" name="サンド用水中ポンプ 100mm" model="KRS-1022-51" image="assets/photos/pump-krs-1022-51.png" specs="{{ specsB }}" quote-note="レンタル料金はお見積もりでご提示します。" cta-label="仕様と用途を見る" on-select="{{ toDetail }}" hint-size="100%,480px"></x-import>
-<x-import component-from-global-scope="DesignSystem_d5d132.ProductCard" name="汚水・排水用水中ポンプ 150mm" model="U-65014" image="assets/photos/pump-u-65014.png" specs="{{ specsC }}" quote-note="レンタル料金はお見積もりでご提示します。" cta-label="仕様と用途を見る" on-select="{{ toDetail }}" hint-size="100%,480px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.ProductCard" name="大水量水中ポンプ 350mm" model="U-65014B" image="assets/photos/pump-u-65014.png" specs="{{ specsC }}" quote-note="レンタル料金はお見積もりでご提示します。" cta-label="仕様と用途を見る" on-select="{{ toDetail }}" hint-size="100%,480px"></x-import>
 </div>
 <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:40px">
 <x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="outline-ink" size="md" on-click="{{ toProducts }}" hint-size="220px,44px">レンタル機材の一覧を見る</x-import>
@@ -74,12 +74,13 @@
 </section>
 <section data-screen-label="関連機材まで一式" style="background:#f5f8fa;padding:96px 0">
 <div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px">
-<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="FULL SET" title="関連機材まで、一式でご相談いただけます。" lead="ポンプ本体だけでなく、現場で必要になる関連機材もまとめて手配します。手配先を分けずに済みます。" hint-size="100%,150px"></x-import>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:40px">
-<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="zap" title="発電機" body="電源のない現場向けに、ポンプの容量に合わせた発電機を手配します。" hint-size="100%,220px"></x-import>
-<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="cable" title="ホース" body="口径・長さ・本数を現場の排水距離に合わせてご用意します。" hint-size="100%,220px"></x-import>
-<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="layers" title="送水管" body="長距離の送水や仮設配管が必要な現場では、送水管もあわせてご相談いただけます。" hint-size="100%,220px"></x-import>
-<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="package" title="その他の関連機材" body="ケーブル・フロートなど、現場に応じて必要な機材をご案内します。" hint-size="100%,220px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="FULL SET" title="関連機材まで、一式でご相談いただけます。" lead="ポンプ本体だけでなく、電源まわりから配管まで、現場で必要になる機材をまとめて手配します。手配先を分けずに済みます。" hint-size="100%,150px"></x-import>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:40px">
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="zap" title="発電機" body="ポンプの出力と始動電流に合わせて手配します。" hint-size="100%,200px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="cable" title="キャブタイヤケーブル" body="電源設備までの距離に応じた長さをご用意します。" hint-size="100%,200px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="settings" title="操作盤・分電盤" body="スター・デルタ始動と複数台運転に対応します。" hint-size="100%,200px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="waves" title="大口径サクションホース" body="口径・長さ・本数を現場の取り回しに合わせます。" hint-size="100%,200px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.FeatureCard" icon="layers" title="大口径送水用鋼管" body="長距離送水の配管検討と設置指導まで承ります。" hint-size="100%,200px"></x-import>
 </div>
 <p style="margin:24px 0 0;font-size:12px;color:#6b7a86">※ 関連機材は案件に応じて手配します。取扱範囲・手配条件はお問い合わせの際にご確認ください。</p>
 </div>
@@ -91,7 +92,7 @@
 <x-import component-from-global-scope="DesignSystem_d5d132.StepFlow" steps="{{ scopeSteps }}" hint-size="100%,200px"></x-import>
 </div>
 <div style="margin-top:32px">
-<x-import component-from-global-scope="DesignSystem_d5d132.Notice" tone="info" title="水理計算・流量測定に関するご相談" hint-size="100%,110px">必要な水量や機材構成が決まっていない段階でも、現場条件をもとにご相談いただけます。詳しくは<a href="support-page.html">サポート内容</a>をご覧ください。※ 対応範囲は現場条件により異なります。</x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.Notice" tone="info" title="流量測定・水理計算・設置指導のご相談" hint-size="100%,120px">現地での流量測定、水理計算にもとづく排水計画のご提案、送水用鋼管の設置指導も承ります。必要な水量や機材構成が決まっていない段階からご相談いただけます。詳しくは<a href="support-page.html">サポート内容</a>をご覧ください。※ 対応範囲は現場条件により異なります。</x-import>
 </div>
 </div>
 </section>
@@ -112,7 +113,7 @@
 <div style="display:flex;flex-direction:column;gap:10px;padding:20px 24px 24px">
 <div style="display:flex;gap:8px;flex-wrap:wrap"><span style="font-size:12px;padding:4px 10px;border-radius:9999px;background:#eef3f7;color:#26343f">水路改修</span><span style="font-size:12px;padding:4px 10px;border-radius:9999px;background:#eef3f7;color:#26343f">市街地</span></div>
 <span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:18px;font-weight:700;line-height:1.45;color:#14212c">市街地水路の水替えを、2台並列運転で対応</span>
-<span style="font-family:'Roboto Mono',monospace;font-size:13px;color:#6b7a86">U-65014 ×2／ホース</span>
+<span style="font-family:'Roboto Mono',monospace;font-size:13px;color:#6b7a86">U-65014B ×2／ホース</span>
 </div>
 </a>
 <a href="case-studies.html" style="display:flex;flex-direction:column;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;overflow:hidden;text-decoration:none;color:inherit;box-shadow:0 1px 2px rgba(20,33,44,.06);transition:box-shadow 180ms ease" style-hover="box-shadow:0 6px 16px rgba(20,33,44,.12)">
@@ -126,6 +127,28 @@
 </div>
 <div style="display:flex;justify-content:center;margin-top:40px">
 <x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="outline-ink" size="md" on-click="{{ toCases }}" hint-size="200px,44px">対応事例をすべて見る</x-import>
+</div>
+<div style="margin-top:64px;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;padding:40px 48px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:baseline;justify-content:space-between">
+<div style="display:flex;flex-direction:column;gap:6px">
+<span style="display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:0.05em;color:#0f72af"><span style="width:28px;height:4px;border-radius:2px;background:#0f72af"></span>DELIVERY RECORDS</span>
+<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:24px;font-weight:700;line-height:1.45;color:#14212c">大型水中ポンプの納入実績</span>
+</div>
+<span style="font-size:14px;line-height:1.9;color:#4c5a66;max-width:520px">開発建設部・建設管理部・自治体の河川改修や災害復旧の工事に、大型水中ポンプを納入しています。</span>
+</div>
+<div style="display:flex;flex-direction:column">
+<sc-for list="{{ records }}" as="r" hint-placeholder-count="6">
+<div style="display:grid;grid-template-columns:3fr 6fr 3fr;gap:24px;padding:14px 0;border-top:1px solid #dde5eb;align-items:baseline">
+<span style="font-size:13px;color:#6b7a86">{{ r.client }}</span>
+<span style="font-size:14px;line-height:1.8;color:#26343f">{{ r.work }}</span>
+<span style="font-family:'Roboto Mono',monospace;font-size:13px;color:#26343f">{{ r.units }}</span>
+</div>
+</sc-for>
+</div>
+<div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+<span style="font-size:12px;color:#6b7a86">※ 納入実績表からの抜粋です。工事名・発注元の表記はご確認のうえ確定します。</span>
+<x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="outline-ink" size="md" on-click="{{ toCompany }}" hint-size="200px,44px">納入実績をすべて見る</x-import>
+</div>
 </div>
 </div>
 </section>
@@ -170,9 +193,18 @@ class Component extends DCLogic {
       heroImg:React.createElement('img',{className:'nk-hero-photo',src:'assets/photos/'+ph,alt:'水替え作業の現場',style:{position:'absolute',inset:0,width:'100%',height:'100%',objectFit:'cover',objectPosition:'center 60%'}}),
       toContact:function(){nav('contact');}, toProducts:function(){nav('products');},
       toDetail:function(){nav('detail');}, toCases:function(){nav('cases');},
-      specsA:[{label:'口径',value:'150 mm'},{label:'吐出量',value:'2.4 m³/min'},{label:'全揚程',value:'22 m'}],
+      specsA:[{label:'口径',value:'400mm'},{label:'規定吐出量',value:'18 m³/min'},{label:'規定全揚程',value:'10 m'}],
       specsB:[{label:'口径',value:'100 mm'},{label:'吐出量',value:'0.9 m³/min'},{label:'全揚程',value:'15 m'}],
-      specsC:[{label:'口径',value:'150 mm'},{label:'吐出量',value:'1.6 m³/min'},{label:'全揚程',value:'14 m'}],
+      specsC:[{label:'口径',value:'350mm'},{label:'規定吐出量',value:'14 m³/min'},{label:'規定全揚程',value:'10 m'}],
+      records:[
+        {client:'旭川建設管理部',work:'天塩川総合流域防災工事（ポントーフトナイ川工区）外',units:'22kW × 6台、45kW × 1台'},
+        {client:'札幌開建本部',work:'石狩川改修工事の内 千歳川西17号樋門撤去外工事',units:'37kW × 3台'},
+        {client:'上富良野町',work:'南部地区土砂流出工事1工区（ベベルイ川）',units:'45kW × 3台'},
+        {client:'小樽開建本部',work:'石狩湾新港北防波堤建設工事',units:'15kW × 2台'},
+        {client:'帯広開建本部',work:'十勝川改修工事の内 十勝川下流樋門ゲート改良外工事',units:'22kW × 2台'},
+        {client:'石狩東部広域水道企業団',work:'輪厚川水管橋耐震補強工事',units:'37kW × 1台'}
+      ],
+      toCompany:function(){nav('company');},
       scopeSteps:[
         {title:'計画',body:'水量・排水距離・工期をお聞きし、排水の進め方からご相談いただけます。'},
         {title:'機材選定',body:'必要な吐出量と全揚程を算出し、機種・台数・関連機材をご提案します。'},

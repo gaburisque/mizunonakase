@@ -39,13 +39,38 @@
 <div style="display:flex;flex-direction:column;gap:16px;background:#ffffff;border:1px solid #dde5eb;border-radius:16px;padding:28px">
 <div style="display:flex;align-items:flex-start;gap:12px"><span style="color:#0f72af;margin-top:2px"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="map-pin" size="20" hint-size="20px,20px"></x-import></span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-weight:700;color:#14212c">所在地</span><span style="font-size:14px;line-height:1.9;color:#26343f">〒078-8233 北海道旭川市豊岡3条8丁目3番19号</span></div></div>
 <div style="display:flex;align-items:flex-start;gap:12px"><span style="color:#0f72af;margin-top:2px"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="phone" size="20" hint-size="20px,20px"></x-import></span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-weight:700;color:#14212c">電話</span><span style="font-family:'Roboto Mono',monospace;font-size:15px;color:#26343f">0166-34-2311</span></div></div>
+<div style="display:flex;align-items:flex-start;gap:12px"><span style="color:#0f72af;margin-top:2px"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="mail" size="20" hint-size="20px,20px"></x-import></span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-weight:700;color:#14212c">メール</span><a href="mailto:mizuno_nakase_y@yahoo.co.jp" style="font-family:'Roboto Mono',monospace;font-size:14px;word-break:break-all">mizuno_nakase_y@yahoo.co.jp</a></div></div>
 <div style="display:flex;align-items:flex-start;gap:12px"><span style="color:#0f72af;margin-top:2px"><x-import component-from-global-scope="DesignSystem_d5d132.Icon" name="truck" size="20" hint-size="20px,20px"></x-import></span><div style="display:flex;flex-direction:column;gap:4px"><span style="font-weight:700;color:#14212c">対応エリア</span><span style="font-size:14px;line-height:1.9;color:#26343f">旭川市および近郊の現場。案件により北海道内もご相談いただけます。</span></div></div>
 </div>
 </div>
 <x-import component-from-global-scope="DesignSystem_d5d132.SpecTable" rows="{{ profileRows }}" caption="※ 会社概要は仮の内容を含みます。ご確認のうえ確定します。" hint-size="100%,420px"></x-import>
 </div>
 </section>
-<section data-screen-label="設備拠点と沿革" style="padding:96px 0">
+<section data-screen-label="納入実績" style="padding:96px 0">
+<div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:32px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="DELIVERY RECORDS" title="大型水中ポンプの納入実績" lead="国土交通省の各開発建設部、北海道の建設管理部、自治体・企業団の工事に、大型水中ポンプを納入しています。発注元ごとに絞り込んでご覧いただけます。" hint-size="100%,160px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.CategoryTabs" items="{{ recordCats }}" value="{{ recordCat }}" on-change="{{ setRecordCat }}" hint-size="100%,44px"></x-import>
+<div style="border:1px solid #dde5eb;border-radius:16px;overflow:hidden">
+<div style="display:grid;grid-template-columns:3fr 6fr 3fr;background:#eef3f7">
+<span style="padding:14px 24px;font-size:13px;font-weight:700;color:#26343f">発注元</span>
+<span style="padding:14px 24px;font-size:13px;font-weight:700;color:#26343f">工事名</span>
+<span style="padding:14px 24px;font-size:13px;font-weight:700;color:#26343f">納入機材</span>
+</div>
+<sc-for list="{{ records }}" as="r" hint-placeholder-count="8">
+<div style="display:grid;grid-template-columns:3fr 6fr 3fr;border-top:1px solid #dde5eb;align-items:start">
+<span style="padding:16px 24px;font-size:14px;line-height:1.8;color:#26343f;background:#f5f8fa">{{ r.client }}</span>
+<div style="display:flex;flex-direction:column;gap:4px;padding:16px 24px">
+<span style="font-size:14px;line-height:1.8;color:#26343f">{{ r.work }}</span>
+<span style="font-size:12px;color:#6b7a86">{{ r.company }}</span>
+</div>
+<span style="padding:16px 24px;font-family:'Roboto Mono',monospace;font-size:13px;line-height:1.8;color:#26343f">{{ r.units }}</span>
+</div>
+</sc-for>
+</div>
+<p style="margin:0;font-size:12px;color:#6b7a86">※ 掲載は納入実績表からの抜粋です。工事名・発注元の表記はご確認のうえ確定します。</p>
+</div>
+</section>
+<section data-screen-label="設備拠点と沿革" style="background:#f5f8fa;padding:96px 0">
 <div class="nk-reveal" style="max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:6fr 6fr;gap:64px;align-items:start">
 <div style="display:flex;flex-direction:column;gap:24px">
 <x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" eyebrow="FACILITIES" title="設備・拠点" lead="機材の保管・整備を行う拠点の写真をご支給ください。" hint-size="100%,150px"></x-import>
@@ -67,21 +92,59 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
+  state={recordCat:'すべて'};
   nav(k){
     var P={home:'index',products:'products',detail:'product-detail',related:'related-equipment',support:'support-page',cases:'case-studies',caseDetail:'case-detail',flow:'flow',faq:'faq',company:'company',contact:'contact',done:'thanks'};
     if(P[k])window.location.href=P[k]+'.html';
   }
   renderVals(){
     var nav=this.nav.bind(this);
+    var raw=[
+      ['室蘭開建本部','一般国道274号むかわ町山水橋補修外一連工事','株式会社石山組','22kW × 1台'],
+      ['札幌開建本部','石狩川改修工事の内 雨竜川幌加内北2号樋門工事','極東建設・笹木産業JV','22kW × 1台'],
+      ['帯広建設管理部','パンケ川小規模改修工事2工区','株式会社新妻組','22kW × 2台'],
+      ['帯広開建本部','十勝川改修工事の内 十勝川下流樋門ゲート改良外工事','野田組・橋本川島JV','22kW × 2台'],
+      ['小樽開建本部','石狩湾新港ケーソン製作工事','岩倉建設・吉本組JV','15kW × 2台'],
+      ['小樽開建本部','石狩湾新港北防波堤建設工事','岩倉建設・吉本組JV','15kW × 2台'],
+      ['網走開建本部','ウトロ漁港 島防波堤ケーソン製作工事','岩倉建設株式会社','15kW × 2台'],
+      ['旭川建設管理部','天塩川総合流域防災工事（ポントーフトナイ川工区）外','株式会社山崎組','22kW × 6台、45kW × 1台'],
+      ['旭川建設管理部','剣淵川改修工事マタルクシュケネブチ川地区1工区','株式会社アラタ工業','22kW × 2台'],
+      ['旭川建設管理部','富良野川改修工事東八線川地区','株式会社廣野組','15kW × 1台'],
+      ['上富良野町','南部地区土砂流出工事1工区（ベベルイ川）','株式会社アラタ工業','45kW × 3台'],
+      ['上富良野町','南部地区土砂流出工事2工区（ベベルイ川）','株式会社アラタ工業','45kW × 2台'],
+      ['札幌開建本部','石狩川改修工事の内 布部築堤河岸保護工事','株式会社中山組','37kW × 1台、45kW × 1台'],
+      ['札幌開建本部','石狩川改修工事の内 千歳川西17号樋門撤去外工事','株式会社中山組','37kW × 3台'],
+      ['旭川開建本部','石狩川改修工事の内 比布大橋左岸下流低水路保護外工事','タカハタ建設株式会社','45kW × 1台'],
+      ['札幌開建本部','石狩川改修工事の内 夕張川右岸築堤外工事','株式会社田端本堂カンパニー','45kW × 1台'],
+      ['札幌開建本部','南長沼地区 南長沼幹線用水路南3号横断外一連工事','株式会社田端本堂カンパニー','37kW × 1台'],
+      ['空知総合局調整','経営体江部乙北西地区41工区','株式会社田端本堂カンパニー','22kW × 3台'],
+      ['札幌開建本部','石狩川改修工事の内 豊平川8号床止左岸改築工事','伊藤組土建株式会社','37kW × 1台'],
+      ['石狩東部広域水道企業団','輪厚川水管橋耐震補強工事','株式会社玉川組','37kW × 1台'],
+      ['札幌開建本部','石狩川改修工事の内 学田築堤河岸保護外工事','植村建設株式会社','37kW × 1台'],
+      ['札幌開建本部','北海地区 北海幹線用水路石山水路橋下流工区工事','植村建設株式会社','11kW × 2台'],
+      ['北広島市','大曲川災害復旧工事','北島工業株式会社','37kW × 2台'],
+      ['登別市','登別温泉浄水道導水管耐震補強工事','株式会社草塩建設','37kW × 1台']
+    ];
+    var records=raw.map(function(r){
+      var g=/開建本部$/.test(r[0])?'開発建設部':(/建設管理部$/.test(r[0])?'建設管理部':'自治体・その他');
+      return {client:r[0],work:r[1],company:r[2],units:r[3],group:g};
+    });
+    var rc=this.state.recordCat;
     return {
       nav:nav,
       navItems:[{label:'水中ポンプレンタル',key:'products'},{label:'関連機材',key:'related'},{label:'サポート内容',key:'support'},{label:'対応事例',key:'cases'},{label:'ご相談の流れ',key:'flow'},{label:'よくあるご質問',key:'faq'},{label:'会社案内',key:'company'}],
       crumbs:[{label:'トップ',href:'index.html'},{label:'会社案内'}],
+      recordCats:['すべて','開発建設部','建設管理部','自治体・その他'],
+      recordCat:rc,
+      setRecordCat:(v)=>this.setState({recordCat:v}),
+      records:rc==='すべて'?records:records.filter(function(r){return r.group===rc;}),
       profileRows:[
         {label:'会社名',value:'株式会社水のナカセ',mono:false},
         {label:'所在地',value:'〒078-8233 北海道旭川市豊岡3条8丁目3番19号',mono:false},
         {label:'電話',value:'0166-34-2311'},
-        {label:'事業内容',value:'水中ポンプ・関連機材のレンタル、機材選定・搬入・設置のサポート',mono:false},
+        {label:'メール',value:'mizuno_nakase_y@yahoo.co.jp'},
+        {label:'事業内容',value:'河川工事などの水替えに使用する水中ポンプのレンタル。発電機・キャブタイヤケーブル・操作盤・分電盤・大口径サクションホース・大口径送水用鋼管のレンタル。現地での流量測定、水理計算によるコンサルティング、水中ポンプ送水用鋼管の設置指導。',mono:false},
+        {label:'取扱機種',value:'サンドポンプ・高揚程ポンプを含む 10 種類以上（出力 11〜55 kW／吐出口口径 100〜500mm／動力 200〜400V）',mono:false},
         {label:'営業時間',value:'ご確認のうえ掲載（仮：平日 8:00–17:30）',mono:false},
         {label:'対応エリア',value:'旭川市および近郊（案件により北海道内)',mono:false}
       ],
