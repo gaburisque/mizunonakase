@@ -1,0 +1,6 @@
+:root{
+  --radius-none:0px;--radius-xs:2px;--radius-sm:4px;--radius-md:6px;
+  --radius-lg:10px;--radius-xl:16px;--radius-2xl:24px;--radius-pill:9999px;
+  --border-width:1px;--border-width-strong:2px; /* @kind spacing */
+  --rule-accent:4px; /* @kind spacing */  /* 見出し上のブルー罫 */
+}
