@@ -1,9 +1,0 @@
-html{-webkit-font-smoothing:antialiased;text-size-adjust:100%}
-body{margin:0;background:var(--surface-canvas);color:var(--text-body);font-family:var(--font-text);font-size:var(--fs-body-md);font-weight:var(--fw-regular);line-height:var(--lh-body);letter-spacing:var(--ls-body)}
-h1,h2,h3,h4,h5{font-family:var(--font-display);font-weight:var(--fw-bold);color:var(--text-heading);line-height:var(--lh-heading);letter-spacing:var(--ls-heading);margin:0}
-p{margin:0;text-wrap:pretty}
-a{color:var(--text-link);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px;transition:color var(--dur-fast) var(--ease-standard)}
-a:hover{color:var(--color-primary-hover)}
-a:visited{color:var(--text-link-visited)}
-*:focus-visible{outline:2px solid var(--color-primary);outline-offset:2px}
-img{display:block;max-width:100%}

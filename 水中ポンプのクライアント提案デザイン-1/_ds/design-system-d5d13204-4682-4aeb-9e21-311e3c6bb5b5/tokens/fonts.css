@@ -1,5 +1,0 @@
-/* Nakase 型：Google Fonts のみ。差し替えやすいよう 2 ファミリーに限定。
-   Display = Zen Kaku Gothic New（幾何学的で素直なゴシック / 見出し・数字）
-   Text    = Noto Sans JP（本文・UI・長文の可読性）
-   Mono    = Roboto Mono（型番・寸法・流量などの英数字データ） */
-@import url("https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap");
