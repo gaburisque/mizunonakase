@@ -1,0 +1,15 @@
+:root{
+  --space-2:2px;--space-4:4px;--space-8:8px;--space-12:12px;--space-16:16px;
+  --space-20:20px;--space-24:24px;--space-32:32px;--space-40:40px;--space-48:48px;
+  --space-64:64px;--space-80:80px;--space-96:96px;--space-120:120px;
+
+  --space-card:24px;        /* カード内側 */
+  --space-card-lg:32px;     /* 特集カード内側 */
+  --space-gutter:24px;      /* グリッド間 */
+  --space-section:96px;     /* 主要バンド間（PC） */
+  --space-section-sm:56px;  /* 同（SP） */
+  --container-max:1200px;
+  --container-wide:1366px;
+  --container-text:760px;   /* 長文の 1 行幅（和文 40〜45 字） */
+  --gutter-page:24px;
+}

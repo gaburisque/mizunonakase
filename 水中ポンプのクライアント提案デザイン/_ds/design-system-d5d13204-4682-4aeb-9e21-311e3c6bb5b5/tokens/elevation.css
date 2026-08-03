@@ -1,0 +1,7 @@
+:root{
+  --shadow-none:none;
+  --shadow-lift:0 2px 8px rgba(20,33,44,.08);          /* カード既定 */
+  --shadow-raise:0 6px 18px rgba(20,33,44,.10);        /* ホバー時のカード */
+  --shadow-modal:0 12px 32px rgba(20,33,44,.16);       /* ドロワー・モーダル */
+  --shadow-header:0 1px 0 var(--border-hairline);
+}
