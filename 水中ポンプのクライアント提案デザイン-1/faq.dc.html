@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/colors.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/typography.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/shape.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/motion.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/base.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/interactions.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/styles.css">
+<script src="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.js"></script>
+<style>body{margin:0;background:#fff}a{color:#0f72af}a:hover{color:#1e88c9}</style>
+</helmet>
+<div style="font-family:'Noto Sans JP',sans-serif;letter-spacing:0.04em">
+<x-import component-from-global-scope="DesignSystem_d5d132.UtilityBar" on-navigate="{{ nav }}" hint-size="100%,36px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.SiteHeader" items="{{ navItems }}" active="よくあるご質問" cta-label="お問い合わせ" on-navigate="{{ nav }}" hint-size="100%,124px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.Breadcrumb" items="{{ crumbs }}" hint-size="100%,44px"></x-import>
+<section data-screen-label="ページヘッダー" style="padding:64px 0 40px">
+<div style="max-width:1200px;margin:0 auto;padding:0 24px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SectionHeading" as="h1" eyebrow="FAQ" title="よくあるご質問" lead="お問い合わせの前に感じやすい疑問をまとめました。解決しない場合は、そのままご相談ください。" hint-size="100%,150px"></x-import>
+</div>
+</section>
+<section data-screen-label="質問一覧" style="padding:0 0 96px">
+<div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:48px">
+<sc-for list="{{ groups }}" as="g" hint-placeholder-count="6">
+<div style="display:grid;grid-template-columns:4fr 8fr;gap:48px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:8px;position:sticky;top:24px">
+<span style="display:inline-flex;align-items:center;gap:10px;font-size:13px;font-weight:700;letter-spacing:0.05em;color:#0f72af"><span style="width:28px;height:4px;border-radius:2px;background:#0f72af"></span>{{ g.eyebrow }}</span>
+<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:24px;font-weight:700;color:#14212c">{{ g.title }}</span>
+</div>
+<x-import component-from-global-scope="DesignSystem_d5d132.FaqAccordion" items="{{ g.items }}" default-open="-1" hint-size="100%,180px"></x-import>
+</div>
+</sc-for>
+<p style="margin:0;font-size:12px;color:#6b7a86">※ 回答は仮の内容です。実際の運用の確認をもとに原稿を確定します。</p>
+</div>
+</section>
+<x-import component-from-global-scope="DesignSystem_d5d132.CtaBand" title="解決しないことは、直接お聞きください。" lead="ここにない疑問も、現場の状況とあわせてご相談いただけます。担当者がその場でお答えします。" primary-label="解決しない場合は相談する" secondary-label="ご相談の流れを見る" on-primary="{{ toContact }}" on-secondary="{{ toFlow }}" hours="受付時間はご確認のうえ掲載します（仮）" mark-src="assets/logo-mark.png" hint-size="100%,300px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.SiteFooter" asset-base="assets" on-navigate="{{ nav }}" hint-size="100%,420px"></x-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  nav(k){
+    var P={home:'index',products:'products',detail:'product-detail',related:'related-equipment',support:'support-page',cases:'case-studies',caseDetail:'case-detail',flow:'flow',faq:'faq',company:'company',contact:'contact',done:'thanks'};
+    if(P[k])window.location.href=P[k]+'.dc.html';
+  }
+  renderVals(){
+    var nav=this.nav.bind(this);
+    return {
+      nav:nav,
+      navItems:[{label:'水中ポンプレンタル',key:'products'},{label:'関連機材',key:'related'},{label:'サポート内容',key:'support'},{label:'対応事例',key:'cases'},{label:'ご相談の流れ',key:'flow'},{label:'よくあるご質問',key:'faq'},{label:'会社案内',key:'company'}],
+      crumbs:[{label:'トップ',href:'トップページ.dc.html'},{label:'よくあるご質問'}],
+      groups:[
+        {eyebrow:'RENTAL PERIOD',title:'レンタル期間',items:[
+          {q:'何日からレンタルできますか',a:'短期のご利用からご相談いただけます。期間により条件が変わるため、使用開始の希望時期と期間をお知らせください。'},
+          {q:'工期が延びた場合はどうなりますか',a:'延長のご連絡をいただければ、期間を変更して継続いただけます。担当者の窓口にご連絡ください。'}]},
+        {eyebrow:'PRICING',title:'料金・お見積もり',items:[
+          {q:'料金はどのように決まりますか',a:'機種・台数・工期・配管・地域により変わるため、都度お見積もりで一式のご金額をご提示します。'},
+          {q:'見積もりに費用はかかりますか',a:'お見積もりのご提示までは費用をいただいていません。現場条件をお知らせください。'}]},
+        {eyebrow:'SELECTION',title:'機材選定',items:[
+          {q:'機種が決まっていなくても相談できますか',a:'はい。現場の状況を分かる範囲でお知らせいただければ、必要な機種と台数を当社がご提案します。'},
+          {q:'必要な口径や台数が分かりません',a:'水量・揚程・排水距離の目安から当社が算出します。水理計算に関するご相談も承ります。'}]},
+        {eyebrow:'RELATED',title:'関連機材',items:[
+          {q:'発電機やホースもまとめて相談できますか',a:'はい。ポンプとあわせて、案件に応じて関連機材を一式で手配します。'},
+          {q:'送水管だけの相談もできますか',a:'案件に応じてご相談いただけます。品目と数量をお知らせください。'}]},
+        {eyebrow:'AREA',title:'対応エリア',items:[
+          {q:'どのエリアまで対応できますか',a:'旭川市とその近郊を中心に対応しています。案件により北海道内もご相談いただけます。'}]},
+        {eyebrow:'DELIVERY',title:'搬入・設置',items:[
+          {q:'搬入・設置までお願いできますか',a:'機材一式の搬入と、現場での据付・配管の接続・試運転までご相談いただけます。対応範囲は案件により異なります。'}]},
+        {eyebrow:'RETURN',title:'返却・故障時の対応',items:[
+          {q:'返却はどうすればよいですか',a:'工期終了のご連絡をいただければ集荷に伺います。洗浄・点検は当社で行います。'},
+          {q:'使用中に故障した場合は',a:'担当者の窓口にご連絡ください。状態を確認のうえ、修理または代替機のご案内をします。'}]}
+      ],
+      toContact:function(){nav('contact');}, toFlow:function(){nav('flow');}
+    };
+  }
+}
+</script>
+</body>
+</html>

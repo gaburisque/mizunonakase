@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/colors.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/typography.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/shape.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/elevation.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/motion.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/base.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/tokens/interactions.css">
+<link rel="stylesheet" href="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/styles.css">
+<script src="_ds/design-system-d5d13204-4682-4aeb-9e21-311e3c6bb5b5/_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@0.474.0/dist/umd/lucide.js"></script>
+<style>body{margin:0;background:#fff}a{color:#0f72af}a:hover{color:#1e88c9}</style>
+</helmet>
+<div style="font-family:'Noto Sans JP',sans-serif;letter-spacing:0.04em">
+<x-import component-from-global-scope="DesignSystem_d5d132.UtilityBar" on-navigate="{{ nav }}" hint-size="100%,36px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.SiteHeader" items="{{ navItems }}" active="対応事例" cta-label="お問い合わせ" on-navigate="{{ nav }}" hint-size="100%,124px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.Breadcrumb" items="{{ crumbs }}" hint-size="100%,44px"></x-import>
+<section data-screen-label="事例ヘッダー" style="padding:64px 0 48px">
+<div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<span style="font-size:12px;padding:4px 10px;border-radius:9999px;background:#eef3f7;color:#26343f">河川改修</span>
+<span style="font-size:12px;padding:4px 10px;border-radius:9999px;background:#eef3f7;color:#26343f">旭川市近郊</span>
+</div>
+<h1 style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:36px;font-weight:700;line-height:1.32;margin:0;color:#14212c;max-width:760px">護岸築造工事の仮排水を、計画から設置まで</h1>
+<p style="margin:0;font-size:12px;color:#6b7a86">※ 事例の内容・写真・工事名は仮のものです。掲載許可の確認のうえ確定します。</p>
+</div>
+<img src="assets/photos/site-channel-sunset.webp" alt="護岸築造工事の現場" style="width:100%;aspect-ratio:21/9;object-fit:cover;object-position:center 60%;border-radius:16px;display:block">
+</div>
+</section>
+<section data-screen-label="事例本文" style="padding:0 0 96px">
+<div style="max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:7fr 5fr;gap:64px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:40px;max-width:760px">
+<div style="display:flex;flex-direction:column;gap:12px">
+<h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:22px;font-weight:700;margin:0;color:#14212c">ご相談内容</h2>
+<p style="margin:0;font-size:15px;line-height:1.9;color:#26343f">護岸築造の締切内で水替えが必要になったものの、必要な排水量と機材の構成が決めきれない、というご相談でした。現場には商用電源がなく、発電機を含めた一式の手配もあわせてのご依頼です。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:22px;font-weight:700;margin:0;color:#14212c">現場の状況</h2>
+<p style="margin:0;font-size:15px;line-height:1.9;color:#26343f">河川敷の締切内に湧水と河川水の回り込みがあり、排水距離は約 80 m。搬入路は仮設道路のみで、大型車両の進入に制約がありました。</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<h2 style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:22px;font-weight:700;margin:0;color:#14212c">当社の対応</h2>
+<p style="margin:0;font-size:15px;line-height:1.9;color:#26343f">水量の目安と排水距離から必要な吐出量を算出し、大水量ポンプ 2 台の並列運転をご提案しました。発電機・送水管を含む機材一式を揃えて搬入し、据付・配管の接続・試運転まで立ち会っています。工期中の水位変動に備え、増設時の構成も事前にお伝えしました。</p>
+</div>
+<figure style="margin:0;display:flex;flex-direction:column;gap:10px"><img src="assets/photos/site-winter-hoses.webp" alt="配管の取り回し" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:16px;display:block"><figcaption style="font-size:13px;color:#6b7a86">配管の取り回し（仮の写真）</figcaption></figure>
+</div>
+<div style="display:flex;flex-direction:column;gap:24px;position:sticky;top:24px">
+<x-import component-from-global-scope="DesignSystem_d5d132.SpecTable" rows="{{ caseRows }}" caption="事例の概要" hint-size="100%,320px"></x-import>
+<div style="display:flex;flex-direction:column;gap:12px;background:#f5f8fa;border-radius:16px;padding:28px">
+<span style="font-family:'Zen Kaku Gothic New',sans-serif;font-size:18px;font-weight:700;color:#14212c">似た現場について相談する</span>
+<span style="font-size:14px;line-height:1.9;color:#4c5a66">機材が決まっていなくても、ご相談いただけます。</span>
+<x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="primary" size="md" full-width="{{ true }}" on-click="{{ toContact }}" hint-size="100%,44px">似た現場について相談する</x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.Button" variant="outline-ink" size="md" full-width="{{ true }}" on-click="{{ toCases }}" hint-size="100%,44px">事例一覧へ戻る</x-import>
+</div>
+</div>
+</div>
+</section>
+<x-import component-from-global-scope="DesignSystem_d5d132.CtaBand" title="近い条件の現場、ありませんか。" lead="事例と違う条件でも構いません。現場の状況をお聞きして、機材と対応内容をご提案します。" primary-label="似た現場について相談する" secondary-label="対応事例をすべて見る" on-primary="{{ toContact }}" on-secondary="{{ toCases }}" hours="受付時間はご確認のうえ掲載します（仮）" mark-src="assets/logo-mark.png" hint-size="100%,300px"></x-import>
+<x-import component-from-global-scope="DesignSystem_d5d132.SiteFooter" asset-base="assets" on-navigate="{{ nav }}" hint-size="100%,420px"></x-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  nav(k){
+    var P={home:'index',products:'products',detail:'product-detail',related:'related-equipment',support:'support-page',cases:'case-studies',caseDetail:'case-detail',flow:'flow',faq:'faq',company:'company',contact:'contact',done:'thanks'};
+    if(P[k])window.location.href=P[k]+'.dc.html';
+  }
+  renderVals(){
+    var nav=this.nav.bind(this);
+    return {
+      nav:nav,
+      navItems:[{label:'水中ポンプレンタル',key:'products'},{label:'関連機材',key:'related'},{label:'サポート内容',key:'support'},{label:'対応事例',key:'cases'},{label:'ご相談の流れ',key:'flow'},{label:'よくあるご質問',key:'faq'},{label:'会社案内',key:'company'}],
+      crumbs:[{label:'トップ',href:'トップページ.dc.html'},{label:'対応事例',href:'対応事例.dc.html'},{label:'護岸築造工事の仮排水'}],
+      caseRows:[
+        {label:'現場の種類',value:'河川改修（護岸築造）',mono:false},
+        {label:'地域',value:'旭川市近郊',mono:false},
+        {label:'使用機材',value:'F-1660A ×2 ほか'},
+        {label:'関連機材',value:'発電機・送水管・ホース',mono:false},
+        {label:'対応範囲',value:'計画〜設置・撤去',mono:false},
+        {label:'対応期間',value:'約 3 か月'}
+      ],
+      toContact:function(){nav('contact');}, toCases:function(){nav('cases');}
+    };
+  }
+}
+</script>
+</body>
+</html>
